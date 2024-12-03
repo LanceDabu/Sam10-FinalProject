@@ -10,3 +10,7 @@ Route::get('/', function () {
 
 
 Route::resource("/employee", EmployeeController::class);
+
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+}
